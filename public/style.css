@@ -1,0 +1,75 @@
+body {
+
+  background-image: url("http://dancefloorusa.com/wp-content/uploads/2013/07/classic-dark-northern-ash.jpg");
+  background-repeat: repeat;
+  text-align: center;
+}
+.btn-roll btn btn-success btn-lg {
+  padding-bottom:10px;
+}
+.wrapper {
+    width: 1000px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+
+.memory-slot {
+
+background-image: "question2.png";
+
+}
+
+span.score {
+font-weight: bold;
+font-family: "Goudy Bookletter 1911", sans-serif;
+padding : 50px;
+
+}
+
+.memory-slot:hover {
+background-image: "question.png";
+}
+
+#score-bar1 {
+
+background-color: "blue";
+
+}
+
+#score-bar2 {
+
+background-color: "red";
+}
+
+button {
+  padding : inherit;
+}
+
+
+img {
+  height : 33vh;
+  padding: 20px;
+  border-radius: 45px;
+}
+
+li {
+  padding: 10px;
+  display: inline-block;
+  list-style: none;
+
+  }
+
+span {
+  padding: 10px;
+}
+
+  ul {
+list-style: none;
+
+  }
