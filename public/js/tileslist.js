@@ -1,6 +1,7 @@
 var React = require('react');
 var Tiles = require('./tiles')
-
+var Score = require('./score');
+var Badge = require('react-bootstrap').Badge
 var comparaison = [];
 
 
@@ -13,7 +14,7 @@ class TilesList extends React.Component {
        super();
 
        this.handleClick = this.handleClick.bind(this);
-       this.state = {selected : true};
+       this.state = {selected : true, signal: ""};
 
 }
 
@@ -25,12 +26,13 @@ class TilesList extends React.Component {
        comparaison.push(animalName);
        console.log(comparaison);
        if(comparaison.length == 2){
-         console.log("j'ai deux animaux en moi");
+         //console.log("j'ai deux animaux en moi");
        if(comparaison[0] == comparaison[1]){
-       console.log("les deux animaux sont identiques")
+        this.setState({ signal: "win"})
+       //console.log("les deux animaux sont identiques")
        comparaison = [];
        } else {
-                console.log("FAUX");
+         this.setState({ signal: "lost"})
                 comparaison = [];
               }
             }
@@ -159,7 +161,9 @@ class TilesList extends React.Component {
               },
 
        ]
+// Mélange des cartes du memory
 
+/*
        function shuffle(a) {
     for (let i = a.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -168,6 +172,7 @@ class TilesList extends React.Component {
     return a;
 }
        shuffle(cards);
+       */
        var tiles = [];
        var questionMark = 'https://static.actu.fr/uploads/2013/11/question1-854x1007.jpg'
 
@@ -182,11 +187,18 @@ class TilesList extends React.Component {
 
        return (
 
+<div>
+         <div>
+         <Score signal={this.state.signal} />
+         </div>
+
          <div className="tile back">
 
          <ul className="tile">
          {tiles}
          </ul>
+
+         </div>
 
          </div>
 

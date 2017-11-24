@@ -1,5 +1,6 @@
 var React = require('react');
 var TilesList = require('./tileslist');
+var Score = require('./score');
 
 class Home extends React.Component {
 
@@ -7,11 +8,15 @@ class Home extends React.Component {
        super();
 
      }
-     
+
      render() {
        return (
+        <div>
+
 
          <TilesList/>
+
+         </div>
        );
      }
     }
